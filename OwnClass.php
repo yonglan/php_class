@@ -268,5 +268,24 @@ class Own {
 		}
 		return $on_line_ip;
 	}
+
+	/**
+	 * 计算不同时间的月份差
+	 * @param $data1    之前的时间戳
+	 * @param $data2    之后的时间戳
+	 * @return mixed    之间距离的月份
+	 */
+	function diff_date_mouth($data1, $data2) {
+		//如果￥data1时间晚于data2的时间，则交换
+		if ($data1 > $data2) {
+			$temp = $data1;
+			$data1 = $data2;
+			$data2 = $temp;
+		}
+		list($y1, $m1) = explode("-", date("Y-m", $data1));
+		list($y2, $m2) = explode("-", date("Y-m", $data2));
+		$rs = ($y2 - $y1) * 12 + ($m2 - $m1);
+		return $rs;
+	}
 }
 ?>
