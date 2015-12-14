@@ -27,8 +27,6 @@ class Own {
 		}
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 		curl_setopt($curl, CURLOPT_POST, 1);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1);
 		curl_setopt($curl, CURLOPT_TIMEOUT, $time);
 		curl_setopt($curl, CURLOPT_HEADER, 0);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
